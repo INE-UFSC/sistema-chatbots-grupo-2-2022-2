@@ -5,9 +5,9 @@ import random as r
 
 class Bot(ABC):
 
-    def __init__(nome,):
-        self.nome = nome
-        self.comandos = {}
+    def __init__(nome, comandos):
+        self.__nome = nome
+        self.__comandos = comandos
 
     #nao esquecer o decorator
     def nome(self):
