@@ -1,14 +1,15 @@
-from Bot import Bot
+from Bots.bot import Bot
+
 
 class BotZangado(Bot):
     def __init__(self, nome='Zangado', comandos={}):
         super().__init__(nome, comandos)
 
-    #def mostra_comandos(self):
-    #    super().mostra_comandos
+    def mostra_comandos(self):
+        return super().mostra_comandos()
 
-    #def executa_comando(self,cmd):
-    #    super().executa_comando
+    def executa_comando(self,cmd):
+       return super().executa_comando(cmd)
 
     def apresentacao(self):
         return 'Grrrrrr. Meu nome é ' + self.nome + ' e eu te odeio!'
