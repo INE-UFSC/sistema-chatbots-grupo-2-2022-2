@@ -18,14 +18,12 @@ class Bot(ABC):
     def nome(self, nome):
         self.__nome = nome
         
-    @abstractmethod
     def mostra_comandos(self):
         r = ''
         for i in self.__comandos.keys():
             r += i + '\n'
         return r[:-1]
 
-    @abstractmethod
     def executa_comando(self,cmd):
         return self.__comandos[cmd]
 
