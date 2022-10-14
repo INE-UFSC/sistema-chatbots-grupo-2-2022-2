@@ -1,7 +1,6 @@
 ##implemente as seguintes classes
-
 from abc import ABC, abstractmethod
-import random as r
+from SistemaChatBot.Comando import Comando
 
 class Bot(ABC):
     def __init__(self, nome, comandos):
@@ -20,13 +19,18 @@ class Bot(ABC):
         
     def mostra_comandos(self):
         r = ''
-        for i in self.__comandos.keys():
-            r += i + '\n'
+        for i in self.__comandos:
+            r += i.msg + '\n'
         return r[:-1]
 
     def executa_comando(self,cmd):
-        return self.__comandos[cmd]
+        i = self.__comandos.index(cmd)
+        return self.__comandos[i].msg
 
+    @abstractmethod
+    def apresentacao():
+        pass
+    
     @abstractmethod
     def boas_vindas():
         pass
